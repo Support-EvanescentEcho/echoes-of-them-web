@@ -1,0 +1,39 @@
+{
+  "release": [
+    {
+      "version": "v0.1.0",
+      "date": "Noviembre 2026",
+      "title": "Primer Lanzamiento Oficial y Santuario Oral",
+      "changes": [
+        "Lanzamiento oficial de Echoes of Them para Android y Escritorio (Compose Multiplatform).",
+        "Formato de cápsula sellada (.echoes) con PBKDF2-HMAC-SHA256 (600.000 iteraciones) y cifrado AES-256-GCM.",
+        "Interfaz de doble orientación 'Modo Mesa' para conversaciones íntimas cara a cara.",
+        "Exportación de reproductor HTML autónomo para más de 40 años junto a paquetes estándar Ogg Opus (RFC 7845)."
+      ]
+    }
+  ],
+  "beta": [
+    {
+      "version": "v0.1.0-beta.02",
+      "date": "Octubre 2026",
+      "title": "Barajas en 10 Idiomas y Renderizado de Formas de Onda",
+      "changes": [
+        "Barajas de preguntas de conversación precargadas en 10 idiomas (EN, ES, DE, FR, IT, JA, KO, PT, RU, ZH).",
+        "Cálculo acústico de picos de onda en tiempo real y medición de energía RMS.",
+        "Temas visuales y modos de accesibilidad para daltonismo (Deuteranopía, Protanopía, Tritanopía)."
+      ]
+    }
+  ],
+  "alpha": [
+    {
+      "version": "App v0.1.0-alpha · Desktop v0.1.0-alpha",
+      "date": "Octubre 2026",
+      "title": "Escudo de Seguridad Nativo en C++17 y Limpieza de Memoria",
+      "changes": [
+        "Integración de la librería de seguridad nativa C++17 (:security-native) con borrado seguro de memoria RAM (secure_zero).",
+        "Pipeline de compresión Zstandard (Zstd Nivel 9) para metadatos de personas e índices temporales.",
+        "Compilaciones de paridad de escritorio para Windows (.msi) y Linux (.deb) verificadas."
+      ]
+    }
+  ]
+}

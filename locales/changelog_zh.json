@@ -1,0 +1,39 @@
+{
+  "release": [
+    {
+      "version": "v0.1.0",
+      "date": "November 2026",
+      "title": "First Stable Release & The Oral Sanctuary",
+      "changes": [
+        "Official launch of Echoes of Them on Android & Desktop (Compose Multiplatform).",
+        "Sealed Time-Capsule format (.echoes) with PBKDF2-HMAC-SHA256 (600k iterations) and AES-256-GCM cipher.",
+        "Table Mode dual-orientation interface for intimate face-to-face oral storytelling.",
+        "Autonomous 40+ year HTML Player export with standard RFC 7845 Ogg Opus audio packages."
+      ]
+    }
+  ],
+  "beta": [
+    {
+      "version": "v0.1.0-beta.02",
+      "date": "October 2026",
+      "title": "10-Language Decks & Waveform Rendering",
+      "changes": [
+        "Preloaded invitation prompt decks across 10 languages (EN, ES, DE, FR, IT, JA, KO, PT, RU, ZH).",
+        "Real-time acoustic waveform peak calculation and RMS energy measurement.",
+        "Color schemes and colorblind accessibility modes (Deuteranopia, Protanopia, Tritanopia)."
+      ]
+    }
+  ],
+  "alpha": [
+    {
+      "version": "App v0.1.0-alpha · Desktop v0.1.0-alpha",
+      "date": "October 2026",
+      "title": "C++17 Native Security Shield & Memory Security",
+      "changes": [
+        "Integration of low-level C++17 security library (:security-native) with secure_zero RAM clearing.",
+        "Zstandard (Zstd Level 9) compression pipeline for person metadata and timeline indices.",
+        "Desktop parity builds for Windows (.msi) and Linux (.deb) verified."
+      ]
+    }
+  ]
+}

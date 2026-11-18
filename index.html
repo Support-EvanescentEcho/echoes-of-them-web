@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Them — Official Support, Terms &amp; Privacy</title>
+
+    <!-- Google Fonts: Cormorant Garamond (refined serif) and Inter (highly readable body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+</head>
+<body class="lang-active-en">
+
+    <header>
+        <div class="logo-area">
+            <img src="assets/logo.svg" alt="Echoes of Them Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo-text">
+                <div class="logo-title">Echoes of Them</div>
+                <div class="logo-subtitle" id="logo-sub">Official Support &amp; Sanctuary</div>
+            </div>
+        </div>
+        
+        <div class="selectors">
+            <!-- Dynamic Theme Selector -->
+            <div class="select-wrapper">
+                <span id="theme-lbl">Theme:</span>
+                <select id="theme-select" onchange="applyTheme(this.value)">
+                    <option value="light" id="theme-opt-light">Light</option>
+                    <option value="dark" id="theme-opt-dark">Dark</option>
+                    <option value="system" id="theme-opt-system" selected>System</option>
+                </select>
+            </div>
+
+            <!-- Dynamic Language Selector -->
+            <div class="select-wrapper">
+                <span id="lang-lbl">Language:</span>
+                <select id="lang-select" onchange="applyLanguage(this.value)">
+                    <option value="en" selected>English</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="pt">Português</option>
+                    <option value="ru">Русский</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1 id="hero-title">Echoes of Them</h1>
+            <p id="hero-desc" style="max-width: 680px; margin: 0.75rem auto 0; font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--text-secondary); line-height: 1.5;">
+                Crafting intimate, secure tools to preserve life's fleeting moments and voices before they fade away.
+            </p>
+            <div class="hero-download-buttons" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <span class="btn-action" id="downloadPlayStore" aria-disabled="true" style="width: auto; min-width: 180px; opacity: 0.6; cursor: default;">Google Play (in development)</span>
+                <a href="https://github.com/Support-EvanescentEcho/echoes-of-them-web/releases/latest/download/EchoesOfThem-Setup.msi" class="btn-action" id="downloadWindows" style="width: auto; min-width: 180px;">Download Windows (Alpha · .msi)</a>
+                <a href="https://github.com/Support-EvanescentEcho/echoes-of-them-web/releases/latest/download/EchoesOfThem.deb" class="btn-action" id="downloadLinux" style="width: auto; min-width: 180px;">Download Linux (Alpha · .deb)</a>
+                <a href="https://github.com/Support-EvanescentEcho/echoes-of-them-web/releases/latest/download/EchoesOfThem.apk" class="btn-action" id="downloadApk" style="width: auto; min-width: 180px;">Download APK (Direct)</a>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'home')" id="tab-home">Home</button>
+            <button class="tab-btn" onclick="switchTab(event, 'changelog')" id="tab-changelog">Changelog</button>
+            <button class="tab-btn" onclick="switchTab(event, 'roadmap')" id="tab-roadmap">Roadmap</button>
+            <button class="tab-btn" onclick="switchTab(event, 'project')" id="tab-project">The Project</button>
+            <button class="tab-btn" onclick="switchTab(event, 'legal')" id="tab-legal">Legal &amp; FAQ</button>
+        </div>
+
+        <!-- 1. HOME PANEL -->
+        <div id="panel-home" class="tab-panel active">
+            <!-- Features & Human Boundaries -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 id="featuresTitle">Human Boundaries &amp; Pillars</h2>
+                </div>
+                <div class="features-minimal-grid">
+                    <div class="feature-minimal-card">
+                        <h3 id="featTableTitle">Technology as a Silent Mediator</h3>
+                        <p id="featTableDesc">Place the device flat on the table, enter Table Mode, and look into each other's eyes while talking. The software stays quietly in the background.</p>
+                    </div>
+                    <div class="feature-minimal-card">
+                        <h3 id="featNoAiTitle">Zero Biometric AI &amp; No Voice Cloning</h3>
+                        <p id="featNoAiDesc">The human voice is treated as a sacred, irreproducible treasure. Strictly zero voice cloning, synthesis, AI transcription APIs, or biometric cloud uploads. 100% offline.</p>
+                    </div>
+                    <div class="feature-minimal-card">
+                        <h3 id="featCapsuleTitle">Sealed Time-Capsule (.echoes)</h3>
+                        <p id="featCapsuleDesc">Encrypted with XChaCha20-Poly1305 and a key derived from your password with Argon2id (libsodium), with Zstandard level 9 compression for metadata. Keys live in protected memory and are wiped after use.</p>
+                    </div>
+                    <div class="feature-minimal-card">
+                        <h3 id="featHtmlPlayerTitle">Open Capsule 40+ Years Longevity</h3>
+                        <p id="featHtmlPlayerDesc">Export an autonomous, self-contained HTML player alongside standard Ogg Opus audio. Works directly via file:// in any browser without internet or external servers for decades.</p>
+                    </div>
+                    <div class="feature-minimal-card">
+                        <h3 id="featNoGameTitle">Zero Gamification &amp; Gentle Decks</h3>
+                        <p id="featNoGameDesc">Curated invitation card decks across 10 languages. Any question can be passed gently without pressure or guilt. Zero completion percentages or anxiety loops.</p>
+                    </div>
+                    <div class="feature-minimal-card">
+                        <h3 id="featDesktopTitle">Cross-Platform Android &amp; Desktop</h3>
+                        <p id="featDesktopDesc">Built with Compose Multiplatform for Android, Windows, and Linux. Full visual and cryptographic parity between your phone and your desktop computer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Policy & Microphone Declaration -->
+            <div class="card" style="margin-top: 2.5rem;" id="privacy-policy">
+                <div class="card-header">
+                    <h2 id="privacyTitle">Privacy Policy &amp; Microphone Usage (RECORD_AUDIO)</h2>
+                </div>
+                <div class="privacy-content" style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                    <h3 id="privMicTitle" style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">1. Microphone Permission (RECORD_AUDIO)</h3>
+                    <p id="privMicDesc" style="margin-bottom: 1.25rem;">Echoes of Them requests access to your microphone strictly when you deliberately tap to record an oral memory or interview in Table Mode. The microphone is never activated in the background or without your explicit, visible consent.</p>
+                    
+                    <h3 id="privStorageTitle" style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">2. Strictly Local Storage &amp; Zero Transmission</h3>
+                    <p id="privStorageDesc" style="margin-bottom: 1.25rem;">All audio recordings are encoded into standard RFC 7845 Ogg Opus files and stored solely within your device's private sandbox (and sealed within your encrypted .echoes capsules). No voice recordings are ever uploaded to cloud servers, shared with third parties, or used for biometric profiling.</p>
+                    
+                    <h3 id="privControlTitle" style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">3. User Sovereignty &amp; Data Deletion</h3>
+                    <p id="privControlDesc">You retain complete custody of your archive: you can revoke microphone access at any time through system settings and permanently delete any voice recording or person profile directly inside the application.</p>
+                </div>
+            </div>
+
+            <!-- Supporter Benefits -->
+            <div class="card" style="margin-top: 2.5rem;">
+                <div class="card-header">
+                    <h2 id="tiersTitle">Supporter Benefits &amp; Wall of Fame</h2>
+                </div>
+                <div class="benefits-grid" style="margin-top: 1rem;">
+                    <div class="benefit-card">
+                        <div class="benefit-badge" id="tierOneTimeBadge">One-Time</div>
+                        <h3 id="tierOneTimeTitle">One-Time Support</h3>
+                        <p id="tierOneTimeDesc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.5rem;">Your name is inscribed on the Wall of Fame (inside the app's About screen) and you can propose meaningful invitation prompt cards for upcoming deck updates.</p>
+                    </div>
+                    <div class="benefit-card premium">
+                        <div class="benefit-badge monthly" id="tierMonthlyBadge">Monthly</div>
+                        <h3 id="tierMonthlyTitle">Monthly Patronage</h3>
+                        <p id="tierMonthlyDesc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.5rem;">Your name honored on the Wall of Fame with a personalized reflective dedication under it, propose priority conversation cards, and actively vote on future multiplatform roadmap milestones.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Disclaimer -->
+            <div class="card" style="margin-top: 2.5rem;">
+                <div class="card-header">
+                    <h2 id="disclaimer_title">Artistic &amp; Intellectual Property Tribute</h2>
+                </div>
+                <p id="disclaimer_desc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                    Color schemes, reflective prompts, and soundtrack references are cultural and artistic homages inspired by their respective original masterworks. All intellectual property rights belong entirely to their original authors, composers, and animation studios. Echoes of Them is an independent, non-commercial, artisanal project.
+                </p>
+            </div>
+
+            <!-- Support Independent Development -->
+            <div class="card" style="margin-top: 2.5rem;">
+                <div class="card-header">
+                    <h2 id="support_title">Support Independent Development</h2>
+                </div>
+                <p id="support_desc" style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">
+                    Echoes of Them is part of Evanescent Echo, a small suite of free, private tools, with no cloud and no AI. If you believe in preserving human voices, you can support Evanescent Echo and all its tools on Ko-fi.
+                </p>
+                <a href="https://ko-fi.com/evanescentecho" target="_blank" class="btn-action" id="kofi-btn" style="width: auto; min-width: 240px; display: inline-flex;">
+                    Buy me a coffee (Ko-fi)
+                </a>
+                <div class="divider-line"></div>
+                <div class="contact-info">
+                    <label id="contact-lbl">Technical &amp; Archival Support</label>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <a href="mailto:support.evanescentecho@gmail.com" id="support-email">support.evanescentecho@gmail.com</a>
+                        <button id="copy-email-btn" onclick="copySupportEmail()" style="background: transparent; border: 1px solid var(--border); color: var(--text-secondary); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.85rem; padding: 2px 8px; border-radius: 4px; cursor: pointer; transition: all var(--transition-speed);">[Copy]</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leave your Mark / Prompt Suggestions -->
+            <div class="card" style="margin-top: 2.5rem;">
+                <div class="card-header">
+                    <h2 id="footprintTitle">Leave Your Mark on Echoes of Them</h2>
+                </div>
+                <p id="footprintDesc" style="margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                    Your support helps keep this oral sanctuary alive, free, ad-free, and private; you can also contribute your own conversation questions to help families and loved ones open their hearts.
+                </p>
+
+                <h3 id="footprintCategoriesTitle" style="font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Available categories for your contribution</h3>
+                <div class="footprint-categories">
+                    <div class="footprint-cat-card">
+                        <div class="footprint-cat-icon">✦</div>
+                        <h4 id="footprintCat1Title">Life &amp; Origins</h4>
+                        <p id="footprintCat1Desc">Questions about childhood memories, parents, ancestral roots, and early dreams.</p>
+                        <code class="footprint-file-tag">deck_roots.json</code>
+                    </div>
+                    <div class="footprint-cat-card">
+                        <div class="footprint-cat-icon">⏳</div>
+                        <h4 id="footprintCat2Title">Turning Points</h4>
+                        <p id="footprintCat2Desc">Moments of unexpected courage, heartbreak, transformation, and career leaps.</p>
+                        <code class="footprint-file-tag">deck_journeys.json</code>
+                    </div>
+                    <div class="footprint-cat-card">
+                        <div class="footprint-cat-icon">✎</div>
+                        <h4 id="footprintCat3Title">Love &amp; Companionship</h4>
+                        <p id="footprintCat3Desc">Reflections on quiet devotion, bonds forged across time, and cherished lessons.</p>
+                        <code class="footprint-file-tag">deck_love.json</code>
+                    </div>
+                    <div class="footprint-cat-card footprint-cat-sensitive">
+                        <div class="footprint-cat-icon">🕯</div>
+                        <h4 id="footprintCat4Title">Words for the Future</h4>
+                        <p id="footprintCat4Desc">Loving advice, comforting wishes, and final thoughts left for generations to come.</p>
+                        <code class="footprint-file-tag">deck_legacy.json</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. CHANGELOG PANEL -->
+        <div id="panel-changelog" class="tab-panel">
+            <div class="card document-container">
+                <div class="card-header">
+                    <h2 id="changelogTitle">Version Changelog</h2>
+                </div>
+                <p id="changelogDesc" style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">Read about features, architectural milestones, and fixes across public releases, beta iterations, and alpha builds.</p>
+                
+                <div class="changelog-subtabs">
+                    <button class="subtab-btn active" onclick="switchChangelogChannel('release')" id="subtab-release-lbl">Release</button>
+                    <button class="subtab-btn" onclick="switchChangelogChannel('beta')" id="subtab-beta-lbl">Beta Logs</button>
+                    <button class="subtab-btn" onclick="switchChangelogChannel('alpha')" id="subtab-alpha-lbl">Alpha Logs</button>
+                </div>
+                
+                <div id="changelog-alpha-notice-box" class="alpha-notice-box" style="display: none;">
+                    <p id="changelogAlphaNotice">Alpha builds are targeted pre-release iterations verifying low-level C++17 cryptographic integrity, audio pipeline performance, and cross-platform UI rendering.</p>
+                </div>
+
+                <div id="changelog-timeline" class="changelog-timeline">
+                    <!-- Dynamic content injected by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. ROADMAP PANEL -->
+        <div id="panel-roadmap" class="tab-panel">
+            <div class="card document-container">
+                <div class="card-header">
+                    <h2 id="roadmapMainTitle">Oral Sanctuary Roadmap</h2>
+                </div>
+                <p id="roadmapDesc" style="margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-secondary);">Track completed foundations, ongoing tasks, and features planned for upcoming updates.</p>
+                
+                <div class="roadmap-columns">
+                    <div class="roadmap-column">
+                        <div class="roadmap-column-header">
+                            <span class="dot planned"></span>
+                            <h3 id="roadmapPlanned">Planned</h3>
+                        </div>
+                        <div class="roadmap-list">
+                            <div class="roadmap-item">
+                                <p id="roadmapItemP2P">Local P2P direct transfer (Wi-Fi/LAN) without intermediaries</p>
+                            </div>
+                            <div class="roadmap-item">
+                                <p id="roadmapItemBook">Hardcover oral memory album export (PDF with QR audio links)</p>
+                            </div>
+                            <div class="roadmap-item">
+                                <p id="roadmapItemWaveform">Advanced tape waveform visualizer customization</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-column">
+                        <div class="roadmap-column-header">
+                            <span class="dot in-progress"></span>
+                            <h3 id="roadmapInProgress">In Progress</h3>
+                        </div>
+                        <div class="roadmap-list">
+                            <div class="roadmap-item">
+                                <p id="roadmapItemDesktop">Desktop builds (Windows .msi &amp; Linux .deb) parity testing</p>
+                            </div>
+                            <div class="roadmap-item">
+                                <p id="roadmapItem10Langs">Complete deck expansion across 10 languages</p>
+                            </div>
+                            <div class="roadmap-item">
+                                <p id="roadmapItemColorblind">Colorblind accessibility theme enhancements</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-column">
+                        <div class="roadmap-column-header">
+                            <span class="dot completed"></span>
+                            <h3 id="roadmapCompleted">Completed</h3>
+                        </div>
+                        <div class="roadmap-list">
+                            <div class="roadmap-item completed">
+                                <p id="roadmapItemEchoesCipher">Sealed Time-Capsule format (.echoes) with XChaCha20-Poly1305, Argon2id &amp; Zstd</p>
+                            </div>
+                            <div class="roadmap-item completed">
+                                <p id="roadmapItemTableMode">Table Mode dual-orientation interface for face-to-face talks</p>
+                            </div>
+                            <div class="roadmap-item completed">
+                                <p id="roadmapItemHtmlExport">Autonomous 40+ year HTML player export with Ogg Opus audio</p>
+                            </div>
+                            <div class="roadmap-item completed">
+                                <p id="roadmapItemZeroBiometric">Strict zero biometric AI &amp; offline audio pipeline</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. THE PROJECT PANEL -->
+        <div id="panel-project" class="tab-panel">
+            <div class="card document-container">
+                <div class="card-header">
+                    <h2 id="projectTitle">About Echoes of Them</h2>
+                </div>
+                <p id="projectDesc1" style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">
+                    Echoes of Them is a 100% offline oral archive designed to capture the authentic voices, laughter, and personal stories of the people we cherish before time slips away.
+                </p>
+                <div class="divider-line"></div>
+                
+                <h3 id="projectInspirationTitle" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Creative Inspiration &amp; Aesthetic Soul</h3>
+                <p id="projectInspirationDesc" style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">
+                    The philosophy and aesthetic of Echoes of Them are deeply rooted in the bittersweet beauty of impermanence (<em>Mono no Aware</em>). In a world rushing toward synthetic voice cloning and impersonal clouds, Echoes of Them celebrates the irreducible warmth of an unedited human conversation.
+                </p>
+
+                <!-- Decorative Quote -->
+                <div class="quote-block">
+                    <p id="quote-text">"A human voice is not data to be cloned or synthesized; it is the unique, unrepeatable vibration of a soul we love, captured before the silence falls."</p>
+                    <div id="quote-author">— Evanescent Echo</div>
+                </div>
+
+                <p id="projectSoundtrackDesc" style="margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">
+                    The musical scores accompanying the craft of every screen, cryptographic line, and card prompt can be explored in my curated companion soundscape: 
+                    <a href="https://www.youtube.com/playlist?list=PLSMOooksGAReM" target="_blank" style="color: var(--primary); font-weight: 500; text-decoration: underline; margin-left: 0.25rem;">▶ Official YouTube Playlist</a>.
+                </p>
+                <p id="projectInspirationListTitle" style="margin-bottom: 0.75rem; font-weight: 500; color: var(--text-primary); font-size: 0.95rem;">Artistic and musical inspirations that breathed life into this sanctuary:</p>
+                <ul id="projectInspirationList" style="margin-left: 1.5rem; margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-secondary); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem 1.5rem; list-style-type: circle;">
+                    <li><strong>Plastic Memories</strong> — <em>Music: Takeshi Masuda</em></li>
+                    <li><strong>Violet Evergarden</strong> — <em>Music: Evan Call</em></li>
+                    <li><strong>Sousou no Frieren</strong> — <em>Music: Evan Call</em></li>
+                    <li><strong>Koe no Katachi (A Silent Voice)</strong> — <em>Music: Kensuke Ushio</em></li>
+                    <li><strong>Clannad &amp; Clannad After Story</strong> — <em>Music: Jun Maeda, Shinji Orito</em></li>
+                    <li><strong>To the Moon</strong> — <em>Music: Kan Gao, Laura Shigihara</em></li>
+                    <li><strong>Shigatsu wa Kimi no Uso</strong> — <em>Music: Masaru Yokoyama</em></li>
+                    <li><strong>Kimi no Suizou wo Tabetai</strong> — <em>Music: Hiroko Sebu</em></li>
+                    <li><strong>Byousoku 5 Centimeter</strong> — <em>Music: Tenmon</em></li>
+                    <li><strong>Ano Hi Mita Hana</strong> — <em>Music: REMEDIOS</em></li>
+                    <li><strong>GRIS</strong> — <em>Music: Berlinist</em></li>
+                    <li><strong>Spiritfarer</strong> — <em>Music: Max LL</em></li>
+                </ul>
+
+                <div class="divider-line"></div>
+
+                <h3 id="projectTechTitle" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem;">Architectural Integrity &amp; Digital Sovereignty</h3>
+                <p id="projectTechDesc1" style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-secondary);">
+                    Built with Kotlin Multiplatform, Compose Multiplatform, and the shared Evanescent Echo security library (libsodium with a C++17 layer). Uses RFC 7845 compliant Ogg Opus audio containers for universal standard compatibility.
+                </p>
+                <p id="projectTechDesc2" style="font-size: 0.95rem; color: var(--text-secondary);">
+                    No user accounts, no telemetry tokens, and zero servers. Sealed capsules (.echoes) can only be decrypted with your chosen password, through Argon2id and XChaCha20-Poly1305.
+                </p>
+            </div>    
+        </div>
+
+        <!-- 5. LEGAL & FAQ PANEL -->
+        <div id="panel-legal" class="tab-panel">
+            <!-- FAQ -->
+            <div class="card document-container">
+                <div class="card-header">
+                    <h2 id="faq-main-title">Help Center &amp; Archival FAQ</h2>
+                </div>
+
+                <div class="faq-item">
+                    <h3 id="faq-capsule-title">What is the .echoes sealed capsule format?</h3>
+                    <p id="faq-capsule-desc">The <code>.echoes</code> format is a sovereign, tamper-resistant archive. It packs metadata, person profiles, waveform peaks, and audio tracks, compresses the metadata with Zstandard level 9, and encrypts everything with XChaCha20-Poly1305 using a key derived from your master password with Argon2id. Any tampering is detected, and only the master password can open it.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 id="faq-html-title">How does the 40+ year HTML Player export work?</h3>
+                    <p id="faq-html-desc">When exporting an open capsule, the app produces a self-contained <code>index.html</code> alongside pure <code>.opus</code> files. It contains embedded CSS and vanilla JavaScript with zero CDN or external dependencies, opening directly via <code>file://</code> in any browser today or decades from now.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 id="faq-table-title">What is Table Mode?</h3>
+                    <p id="faq-table-desc">Table Mode is a dual-orientation interface designed for intimacy. Place the phone flat between two people: one side displays the invitation card right-side up for the speaker, while the other side allows subtle control without taking attention away from eye contact.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 id="faq-voice-title">Does Echoes of Them use AI to synthesize or clone voices?</h3>
+                    <p id="faq-voice-desc"><strong>Never.</strong> Echoes of Them has a strict philosophical boundary: zero voice cloning, zero generative AI, and zero biometric profiling. Audio recorded is treated with sacred respect and remains 100% human and unmanipulated.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 id="faq-desktop-title">How does the Desktop version work (Windows &amp; Linux)?</h3>
+                    <p id="faq-desktop-desc">Echoes of Them Desktop provides full parity with mobile: offline architecture, native C++17 security bindings, full <code>.echoes</code> capsule compatibility, and comfortable long-form listening on your PC.</p>
+                </div>
+            </div>
+
+            <!-- Privacy Policy (general) -->
+            <div class="card document-container" style="margin-top: 2.5rem;">
+                <div class="doc-meta" id="priv-updated">Last updated: November 2026</div>
+                <div class="card-header">
+                    <h2 id="priv-main-title">Privacy Policy</h2>
+                </div>
+                
+                <div class="doc-section">
+                    <h3 id="priv-sec1-title">1. Information Collection &amp; Use</h3>
+                    <p id="priv-sec1-body">Echoes of Them is strictly offline-first. I do not collect, transmit, sell, or analyze personal data, voice files, or databases with external servers or third parties. All oral archives remain exclusively on your local device in encrypted storage. This website is purely informative and uses no tracking cookies or telemetry.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 id="priv-sec2-title">2. Networks &amp; Permissions</h3>
+                    <p id="priv-sec2-body">The core application requires no active network (Internet) permissions. Your recordings cannot be accessed or leaked across telecommunication networks.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 id="priv-sec3-title">3. Policy Evolution</h3>
+                    <p id="priv-sec3-body">My commitment to zero cloud data collection and zero biometric processing is permanent. Any minor legal wording updates will be documented here transparently.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 id="priv-sec4-title">4. Technical &amp; Privacy Contact</h3>
+                    <p id="priv-sec4-body">If you have inquiries regarding privacy or archival preservation, contact: <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>.</p>
+                </div>
+            </div>
+
+            <!-- Terms of Service -->
+            <div class="card document-container" style="margin-top: 2.5rem;">
+                <div class="doc-meta" id="terms-updated">Last updated: November 2026</div>
+                <div class="card-header">
+                    <h2 id="terms-main-title">Terms of Service</h2>
+                </div>
+
+                <div class="doc-section">
+                    <h3 id="terms-sec1-title">1. Acceptance of Terms</h3>
+                    <p id="terms-sec1-body">By using Echoes of Them, you agree to these Terms of Service. If you disagree with any terms, please discontinue using the application.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 id="terms-sec2-title">2. Artisanal &amp; Independent Nature</h3>
+                    <p id="terms-sec2-body">The application is distributed as a privacy-respecting tool without commercial monetization or data harvesting. Theme names and musical references represent cultural homages without claiming ownership of third-party intellectual property.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 id="terms-sec3-title">3. Local Custody &amp; User Responsibility</h3>
+                    <p id="terms-sec3-body">The author provides the client software but maintains no access or backdoors to your encrypted data. Users are solely responsible for safely preserving their master passwords and backing up their .echoes files.</p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 id="terms-sec4-title">4. Disclaimer of Warranties</h3>
+                    <p id="terms-sec4-body">The application is provided "as is", without warranties of uninterrupted operation or defect-free service.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p id="footer-text">© 2026 Evanescent Echo. All rights reserved. Independently developed.</p>
+        <p style="font-size: 0.85rem; margin-top: 0.4rem;"><a href="#privacy-policy" id="footerPrivacyLink" style="color: var(--primary); text-decoration: underline;">Privacy Policy</a></p>
+        <p id="footer-version" style="font-size: 0.8rem; margin-top: 0.6rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-weight: 500; opacity: 0.6; letter-spacing: 0.5px; text-transform: uppercase;">App v0.1.0-alpha · Desktop v0.1.0-alpha</p>
+    </footer>
+
+    <!-- Translations & Theme/Language Switches Logic -->
+    <script src="js/script.js"></script>
+</body>
+</html>
